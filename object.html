@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div></div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="content">
+                    <section>
+                        <h1>java_script</h1>
+                        <h2>object</h2>
+                        <p>
+                            자바스크립트에서는 숫자, 문자열, 불리언, undefined 타입을 제외한 모든 것을 객체라 말한다.<br>
+                            (일반적인 Java에서 말하는 개체와는 조금 다르다)<br>
+                            하지만 숫자, 문자열, 불리언과 같은 원시 타입은 값이 정해진 객체로 취급되어, 객체로서의 특징도 함께 가지게 됩니다.
+                        </p>
+                        <p>
+                            객체의 프로퍼티 참조<br> 
+                            문법 객체이름.프로퍼티이름 or 객체이름["프로퍼티이름"]
+                        </p>
+                        ex 1)<br> 
+                        var person = {<br>
+                            name: "홍길동",       // 이름 프로퍼티를 정의함.<br>
+                            birthday: "030219",  // 생년월일 프로퍼티를 정의함.<br>
+                            pId: "1234567",      // 개인 id 프로퍼티를 정의함.<br>
+                        <br>
+                            fullId: function() { // 생년월일과 개인 id를 합쳐서 주민등록번호를 반환함.<br>
+                                return this.birthday + this.pId;<br>
+                            }<br>
+                        
+                        };<br>
+                        
+                        person.name   // 홍길동<br>
+                        person["name"] // 홍길동<br>
+                    </section>
+                    <section>
+                        <p>
+                            객체의 메소드 참조<br> 
+                            객체이름.메소드이름()
+                        </p>
+                        ex 2)<br>
+                        var person = {<br>
+                            name: "홍길동",<br>
+                            birthday: "030219",<br>
+                            pId: "1234567",<br>
+                        <br>        
+                            fullId: function() {<br>
+                                return this.birthday + this.pId;<br>
+                            }<br>
+                        
+                        };<br>
+                        
+                        person.fullId() // 0302191234567<br>
+                        person.fullId;  // function () { return this.birthday + this.pId; }<br>
+                    </section>
+                    <p>
+                        *메소드를 참조할 때 메소드 이름 뒤에 괄호(())를 붙이지 않으면, 메소드가 아닌 프로퍼티 그 자체를 참조하게 된다.<br>
+                        *따라서 괄호를 사용하지 않고 프로퍼티 그 자체를 참조하게 되면 해당 메소드의 정의 그 자체가 반환된다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+</body>
+</html>

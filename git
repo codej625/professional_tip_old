@@ -1,0 +1,35 @@
+# git
+
+git init
+
+git clone { repository_name }
+
+git status
+
+git add { . , file_name }
+
+git commit -m { message }
+
+git log
+
+git reset
+
+git reset —hard { commit_name }
+
+git reset HEAD~{number}
+
+git push { remote_name } { branch_name }
+
+git push { remote_name } { +branch_name }
+
+git pull{ remote_name } { branch_name }
+
+git branch { new_branch_name }
+
+git branch -D { branch_name }
+
+git branch -M { branch_name } 
+
+git remote add { new_remote_name or origin } { git hub url }
+
+git remote remove {  remote_name }

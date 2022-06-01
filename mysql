@@ -1,0 +1,45 @@
+# MySQL 명령어
+
+# -u {계정} -p; 입력후 -> password를 입력하고 접속
+
+mysql -u root -p;
+
+# 스키마를 선택
+
+use mysql;
+
+# user 확인
+
+select user, host from user;
+
+# 데이터베이스 만들기
+
+create database {database name};
+
+# 데이터베이스 보기
+
+show databases;
+
+# user 삭제
+
+1. drop user {username};
+2. delete from user where user={username};
+
+# 유저 생성, 권한 부여
+
+1. CREATE USER id@localhost IDENTIFIED BY 'password';
+2. GRANT ALL PRIVILEGES ON database_name.* TO id@localhost;
+
+# 스키마 생성(DB생성)
+
+CREATE DATABASE database_name default CHARACTER SET UTF8;
+
+# Reload
+
+flush privileges
+
+- study
+1. CREATE DATABASE study DEFAULT CHARACTER SET UTF8;
+2. CREATE USER test@localhost IDENTIFIED BY 'tiger';
+3. GRANT ALL PRIVILEGES ON study.* TO test@localhost;
+4. flush privileges;

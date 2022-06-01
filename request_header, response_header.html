@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+</head>
+<body>
+    Request Header(요청 헤더)
+    HTTP 요청에서 사용되지만 메시지의 컨텐츠와 관련이 없는 패치될 리소스나 클라이언트 자체에 대한 자세한 정보를 포함하는 헤더
+
+    Host : 요청하려는 서버 호스트 이름과 포트번호
+    User-agent : 클라이언트 프로그램 정보 ex) Mozilla/4.0, Windows NT5.1
+    Referer : 현재 페이지로 연결되는 링크가 있던 이전 웹 페이지의 주소
+    Accept : 클라이언트가 처리 가능한 MIME Type 종류 나열
+    Accept-charset : 클라이언트가 지원가능한 문자열 인코딩 방식
+    Accept-language : 클라이언트가 지원가능한 언어 나열
+    Accept-encoding : 클라이언트가 해석가능한 압축 방식 지정
+    If-Modified-Since : 여기에 쓰여진 시간 이후로 변경된 리소스 취득. 캐시가 만료되었을 때에만 데이터를 전송하는데 사용
+    Authorization : 인증 토큰을 서버로 보낼 때 쓰이는 헤더
+    Origin : 서버로 Post 요청을 보낼 때 요청이 어느 주소에서 시작되었는지 나타내는 값. 경로 정보는 포함하지 않고 서버 이름만 포함
+    이 값으로 요청을 보낸 주소와 받는 주소가 다르면 CORS 에러가 난다.
+    Cookie : 쿠기 값 key-value로 표현된다. Set-Cookie 헤더와 함께 서버로부터 이전에 전송됐던 저장된 HTTP 쿠키를 포함
+
+
+    Response Header(응답 헤더)
+    위치 또는 서버 자체에 대한 정보(이름, 버전)과 같이 응답에 대한 부가적인 정보를 갖는 헤더
+
+    Server : 웹서버의 종류
+    Age : max-age 시간내에서 얼마나 흘렀는지 초 단위로 알려주는 값
+    Referrer-policy : 서버 referrer 정책을 알려주는 값 ex) origin, no-referrer, unsafe-url
+    WWW-Authenticate : 사용자 인증이 필요한 자원을 요구할 시, 서버가 제공하는 인증 방식
+    Proxy-Authenticate : 요청한 서버가 프록시 서버인 경우 유저 인증을 위한 값
+    Set-Cookie : 서버측에서 클라이언트에게 세션 쿠키 정보를 설정 (RFC 2965에서 규정)
+
+    출처 및 참조 :
+    https://jeong-pro.tistory.com/181
+    https://developer.mozilla.org/ko/docs/Web/HTTP/Headers
+    https://www.huskyhoochu.com/cache-control/
+    http://coffeenix.net/doc/network/http_1_0_vs_1_1.html
+</body>
+</html>

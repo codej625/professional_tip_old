@@ -1,0 +1,48 @@
+# sql
+
+데이터 입력 Ex)
+INSERT INTO table_name(empno, ename, job) VALUES(1200, 'JAMES', 'CLERK');
+
+데이터 수정 Ex)
+UPDATE table_name SET sal = sal*1.1, comm = 100 WHERE dept =20;
+
+데이터 삭제  Ex)
+DELETE FROM table_name WHERE comm < 1000
+Ex)
+DELETE FROM table_name; 테이블 구조는 남겨두고 모든 로우 삭제
+
+테이블 컬럼 형변환 Ex)
+ALTER TABLE table_name MODIFY column_name type(20);
+
+테이블 생성 Ex)
+CREATE TABLE table_name (name type(20));
+
+테이블 전부 삭제 Ex)
+DROP TABLE "table_name";
+
+컬럼 추가 Ex)
+ALTER TABLE table_name ADD column_name type(20);
+
+컬럼 삭제 Ex)
+ALTER TABLE table_name DROP COLUMN column_name;
+
+컬럼 사이즈 변경 Ex)
+ALTER TABLE table_name MODIFY(column_name type(4000));
+
+컬럼 이름 변경 Ex)
+ALTER table camp_info RENAME COLUMN 기존이름 to 바꿀이름;
+
+유저 생성 Ex)
+CREATE USER user_name IDENTIFIED BY password;
+권한 부여 Ex)
+GRANT DBA TO user_name;
+
+유저 삭제 Ex)
+DROP USER 유저네임 CASCADE;
+
+테이블 제약사항, 데이터 전부삭제 Ex)
+SELECT 'DROP TABLE "' || TABLE_NAME || '" CASCADE CONSTRAINTS;' FROM user_tables;
+DROP TABLE "POST" CASCADE CONSTRAINTS;
+
+대체 변수 해결 EX)
+SET DEFINE OFF;
