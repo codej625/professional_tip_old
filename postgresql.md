@@ -21,4 +21,7 @@ delete from 'table_name' where seq = 0;
 
 /* seq 초기화 */
 ALTER SEQUENCE 'sequence_name' RESTART WITH 1
+or
+SELECT setval('t_hklife_record_seq_seq', 1, false);
+
 ```
