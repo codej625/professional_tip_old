@@ -1,7 +1,7 @@
 map으로 parameter 받기
 =====================
-
-```
+<br/>
+```text
 ex01)
 api =>
 http get방식 전송 => http://localhost:8080/api?data1=100&data2=200&data3=300&data3=400
@@ -24,13 +24,7 @@ public class Api {
 	}
 }
 ```
-
-
-
-
-
-
-
+<br/><br/>
 ```
 ex02)
 api =>
