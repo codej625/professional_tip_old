@@ -1,9 +1,12 @@
 # map으로 parameter 받기
+```
 ex01)
 api =>
 http get방식 전송 => http://localhost:8080/api?data1=100&data2=200&data3=300&data3=400
+```
 
-back-end
+## back-end
+```java
 @RestController
 public class Api {
 	@RequestMapping(value = "/api", method = { RequestMethod.POST, RequestMethod.GET })
@@ -18,13 +21,17 @@ public class Api {
 		return "true";
 	}
 }
+```
 
+```
 ex02)
 api =>
 http post방식 전송 => http://localhost:8080/api
 json file => {"test": "test"}
+```
 
-back-end
+## back-end
+```java
 @RestController
 public class Api {
 	@RequestMapping(value = "/api", method = { RequestMethod.POST, RequestMethod.GET })
@@ -36,4 +43,4 @@ public class Api {
 		return "true";
 	}
 }
-
+```
