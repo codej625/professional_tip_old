@@ -1,64 +1,67 @@
-# 환경 변수 설정
+# mac openjdk_set
 
-```
-vi ~/.bash_profile
-```
 
+### brew 최신버전 설치
 ```
-vi를 이용하여 bash_profile이 실행되면 창이 변경됩니다.
-
-" i " 키를 눌러주세요.
+brew update
 ```
 
+### adoptopenjdk/openjdk 추가하기
 ```
-"i"키를 누르면 하단에 "-- INSERT --"로 바뀐 걸 확인할 수 있습니다.
-```
-
-```
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
-
-export PATH=${PATH}:$JAVA_HOME/bin
-
-입력 후 "esc" 키를 눌러주세요.
-
-
-
-그리고
-
-":wq"를 입력해주면 하단에 작성된 걸 확인할 수 있습니다.
-
-"return" 키를 눌러주세요.
+brew tap adoptopenjdk/openjdk
 ```
 
+### 설치 가능한 모든 JDK 찾기
 ```
-다시 원래의 실행 창으로 변경되면
-
-source ~/.bash_profile 명령어를 입력해주세요.
-
-이제 설정이 끝났습니다.
+brew search jdk
 ```
 
+### 원하는 버전 설치(ex 11)
 ```
-정상적으로 설정이 적용된 건지 확인하기 위해서 몇 가지 명령어를 통해서 확인해보도록 하겠습니다.
-
-먼저, " echo $PATH " 명령어를 입력해주세요.
-
-사진처럼 JDK 경로가 출력되면 정상적으로 PATH 설정이 완료된 거예요.
+brew install --cask adoptopenjdk11
 ```
 
+### 자바가 설치된 곳 확인하기
 ```
-" javac -version " 명령어를 입력해주세요.
-
-자신이 설정한 JDK 버전이 정상적으로 출력됩니다.
+/usr/libexec/java_home -V
 ```
 
+### 자바 버전 확인하기 (기본적으로 최신버전으로 세팅된다.)
 ```
-" Java -version " 명령어를 입력해주세요.
+java --version
+```
 
-자신이 설정한 JDK 버전이 정상적으로 출력됩니다.
+### 자바 버전 바꾸기 (zsh쉘인 경우 ~/.zshrc 파일을 수정해주명된다.)
+### shell check
+```
+echo $SHELL
+```
 
+### shell update
+```
+vi ~/.zshrc
+```
 
-3가지 명령어를 확인했을 때 이상 없이 출력된다면,
+### insert mode ("i"를 입력하면 insert mode로 변경된다.)
+```
+# Java Paths
+export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
+export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
-정상적으로 환경 변수 PATH 설정이 완료된것임
+# Java 11
+export JAVA_HOME=$JAVA_HOME_11
+
+# Java 14
+# 14버전을 사용하고자 하는 경우 아래 주석(#)을 해제하고 위에 11버전을 주석처리 하면된다.
+# export JAVA_HOME=$JAVA_HOME_14
+```
+
+### 변경사항 저장
+```
+source ~/.zshrc
+```
+
+### 세팅되어 있는 자바 버전 확인
+```
+java --version
 ```
