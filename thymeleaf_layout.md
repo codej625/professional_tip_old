@@ -31,7 +31,7 @@ templates 패키지 안에 layout이라는 패키지를 만들고, 그 안에 de
 그리고 default_layout.html의 내용을 지우고 아래의 내용을 입력합니다.
 ```
 
-```
+```html
 <html lang="ko"
 	xmlns:th="http://www.thymeleaf.org"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
@@ -67,7 +67,7 @@ xmlns의 정의가 없으면 타임리프 문법을 사용할 수 없으니 반�
 본 예제에서는 header와 footer 파일을 templates의 fragmants 패키지에서 관리하겠습니다.
 ```
 
-```
+```html
 templates 패키지에 fragments 패키지를 생성하고 header.html, footer.html 파일 생성 후 아래의 코드를 작성합니다.
 # header.html
 
@@ -78,7 +78,7 @@ templates 패키지에 fragments 패키지를 생성하고 header.html, footer.h
 </html>
 ```
 
-```
+```html
 # footer.html
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
@@ -95,7 +95,7 @@ templates에 content라는 패키지를 만들고 그 안에 home.html 파일을
 그리고 아래의 내용을 작성합니다.
 ```
 
-```
+```html
 # home.html
 
 <!DOCTYPE html>
@@ -160,7 +160,7 @@ body, html {
 
 4. Controller 수정
 
-```
+```java
 HomeController의 내용을 아래와 같이 수정합니다.
 
 // HomeController.java
@@ -186,7 +186,7 @@ thymeleaf의 모든 표현식을 다 다루지는 못하고, 컨트롤러에서 
 먼저, 컨트롤러를 수정해서 간단한 데이터를 준비하겠습니다.
 ```
 
-```
+```java
 //HomeController.java
 
 @Controller
@@ -218,7 +218,7 @@ public class HomeController {
 이제 home.html 파일을 열고 아래와 같이 수정해줍니다.
 ```
 
-```
+```html
 # home.html
 
 <!DOCTYPE html>
