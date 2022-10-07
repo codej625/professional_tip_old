@@ -29,7 +29,7 @@ ALTER TABLE table_name DROP COLUMN column_name;
 컬럼 사이즈 변경 Ex)
 ALTER TABLE table_name MODIFY(column_name type(4000));
 
-컬럼 이름 변경 Ex)
+컬럼 이름 변경 Ex) 
 ALTER table camp_info RENAME COLUMN 기존이름 to 바꿀이름;
 
 유저 생성 Ex)
