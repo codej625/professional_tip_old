@@ -23,7 +23,7 @@ header와 footer가 고정적으로 들어가는 웹에서 각각의 page 마다
 fragments directory에는 레이아웃에서 공통적으로 쓸 부분들의 html 코드를 생성한다.
 
 layouts directory의 default_layout.html에는 공통적으로 쓸 header, footer 같은 부분을 적용 및 전체 layout 구조를 세팅하고, page directory는 실제 각각의 page에서는 페이지별로 다른 부분인 content가 적용된다.
-
+```
 
 ```
 ex)
