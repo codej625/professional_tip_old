@@ -56,6 +56,8 @@ export JAVA_HOME=$JAVA_HOME_11
 # export JAVA_HOME=$JAVA_HOME_14
 ```
 
+### esc를 누르고 insert mode종료 후 :wq 입력
+
 ### 변경사항 저장
 ```
 source ~/.zshrc
