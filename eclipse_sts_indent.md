@@ -6,4 +6,7 @@
 
 2. 검색 폼에 indent를 입력하여 Java - Code Style - Formatter    Edit 클릭하여 Tab size 수정 JavaScript 파일도 위와 같습니다.
 
+```
+✅ market에서 web이 먼저 설치 되어 있어야한다.
+```
 3. css, html, XML은 Editor Indentation size를 수정
