@@ -36,3 +36,57 @@ FROM [table1] A;
 즉, table1 테이블은 전체를(A.*), 그리고 table2 테이블의 'gender'컬럼만 떼서 가져오는 것이다.
 SELECT절 서브쿼리가 하나의 'gender'컬럼처럼 사용되고 있다.
 ```
+<br>
+
+### select에 넣는 서브쿼리
+
+```
+FROM절에 사용되는 서브쿼리는 하나의 테이블처럼 사용된다.
+테이블처럼 사용되므로, 열 이름과 테이블명을 꼭 명시해줘야 한다. FROM절 내 서브쿼리는 괄호를 치고, AS 명시)
+```
+
+```
+ex)order 테이블에서 회원번호(mem_no)별 주문금액(sales_amt) 합계를 집계하라.
+```
+
+```sql
+위 질문에 대해서 저번 포스팅에서 배운 GROUP BY를 활용하면 다음과 같다.
+
+SELECT mem_no, SUM(sales_amt) AS tot_amt
+FROM   [ORDER]
+GROUP BY mem_no
+```
+
+```sql
+이렇게 쓴 쿼리를 FROM절로 바꾼다면 이렇게 하나의 테이블처럼 만들면 된다.
+
+SELECT mem_no, SUM(sales_amt) AS tot_amt
+FROM   (
+        SELECT mem_no, SUM(sales_amt) AS tot_amt
+        FROM   [ORDER]
+        GROUP BY mem_no) A
+
+위에 예시는 극단적인 예시이다.
+처음에 썼던 쿼리를 그냥 FROM절 안에 넣고, SELECT문으로는 전체를 호출했기 때문 실제로는 이렇게 쿼리를 짜는 경우가 거의 없다.
+```
+
+```
+실전에서는 여러 가지 테이블을 조인시켜 가공하고, 1차 가공한 결과물을 또다시 2차 가공하고 하는 경우가 많다.
+1차 가공한 결과를 테이블 형태로 다시 저장하면 좋겠지만 이게 불가능한 경우엔 1차 가공물을 FROM절 서브쿼리에 넣어 하나의 테이블로 이용하는 경우가 많다.
+
+그래서 또다른 예시를 살펴보자
+ex) 위에서 만든 FROM절 서브쿼리 A를 기준으로, [MEMBER]테이블을 LEFT JOIN하여라.
+
+```
+
+```sql
+SELECT *
+FROM  (SELECT mem_no, SUM(sales_amt) AS tot_amt
+       FROM   [ORDER]
+       GROUP BY mem_no) A
+LEFT JOIN [MEMBER] B
+ON A.mem_no = B.mem_no
+
+실제론 위 쿼리와 같이 사용되는 경우가 많다.(정말 편리한 FROM절 서브쿼리)
+```
+
