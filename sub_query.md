@@ -5,7 +5,8 @@
 2. from절에 {select, from ,where}을 넣거나,
 3. where에 {select, from ,where} 조건을 넣는 구문을 의미한다.
 
-### select에 넣는 서브쿼리
+### SELECT에 넣는 서브쿼리
+<br>
 
 ```
 ex) table1, table2 테이블 간 공통값만 매칭하되, table1은 전부 & table2는 gender열만 나오게 하라.
@@ -38,7 +39,7 @@ SELECT절 서브쿼리가 하나의 'gender'컬럼처럼 사용되고 있다.
 ```
 <br>
 
-### select에 넣는 서브쿼리
+### SELECT 넣는 서브쿼리
 
 ```
 FROM절에 사용되는 서브쿼리는 하나의 테이블처럼 사용된다.
@@ -90,3 +91,42 @@ ON A.mem_no = B.mem_no
 실제론 위 쿼리와 같이 사용되는 경우가 많다.(정말 편리한 FROM절 서브쿼리)
 ```
 
+<br>
+
+### WHERE에 넣는 서브쿼리
+
+```
+WHERE절 서브쿼리는 일반 서브쿼리이다.
+가장 대표적인 형태이기 때문!
+
+가장 대표적인 예제를 풀어보자.
+```
+
+```
+ex) [MEMBER] 테이블의 mem_no = '1000005'인 주문내역을 [ORDER] 테이블에서 조회하여라.
+```
+
+```sql
+SELECT *
+FROM   [ORDER]
+WHERE  mem_no IN (SELECT mem_no FROM [MEMBER] WHERE mem_no = '100005')
+```
+
+```
+이렇게 [MEMBER] 테이블의 mem_no를 조회할 때 WHERE절은 유용하게 쓰인다.
+위의 예시는 너무 간단하니 한번 더 해보자!
+```
+
+```
+ex) [MEMBER] 테이블의 gender = 'man'인 주문내역을 [ORDER] 테이블에서 조회하여라.
+```
+
+```sql
+SELECT *
+FROM   [ORDER]
+WHERE  mem_no IN (SELECT mem_no FROM [MEMBER] WHERE gender = 'man')
+```
+
+```
+이는 [MEMBER]와 [ORDER]테이블의 공통열(key)이 mem_no이기 때문에, gender = 'man'인 mem_no를 WHERE절로부터 찾아내 조회 할 수 있었다.
+```
