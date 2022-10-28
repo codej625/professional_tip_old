@@ -20,6 +20,7 @@ LEFT JOIN [table2] B
 ON A.mem_no = B.mem_no;
 ```
 <br>
+
 ```
 이렇게 left join을 활용한 것을 select절 서브쿼리로 바꿔서 풀면 이렇게 할 수 있다.
 ```
