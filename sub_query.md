@@ -131,3 +131,43 @@ WHERE  mem_no IN (SELECT mem_no FROM [MEMBER] WHERE gender = 'man')
 ```
 이는 [MEMBER]와 [ORDER]테이블의 공통열(key)이 mem_no이기 때문에, gender = 'man'인 mem_no를 WHERE절로부터 찾아내 조회 할 수 있었다.
 ```
+
+```
+ex2 실전)
+```
+
+```sql
+SELECT a.visit_time,
+       a.ip,
+       a.device,
+       a.source_code,
+       a.medium_code,
+       a.campaign_code,
+       a.contents_code,
+       a.term_code,
+       a.adv_object_code,
+       a.adv_object_name,
+       a.url,
+       b.conversion_type,
+       b.visit_time AS req_time
+FROM   (SELECT visit_time,
+               ip,
+               device,
+               source_code,
+               medium_code,
+               campaign_code,
+               contents_code,
+               term_code,
+               adv_object_code,
+               adv_object_name,
+               url
+        FROM   visit_log
+        WHERE  visit_time BETWEEN {date_start} AND {date_end}) AS a
+        LEFT JOIN (SELECT conversion_type,
+                          visit_time
+                   FROM  record
+                   WHERE visit_time BETWEEN {date_start} AND {date_end}) AS b
+ON a.visit_time = b.visit_time
+ORDER BY a.visit_time DESC
+```
+
