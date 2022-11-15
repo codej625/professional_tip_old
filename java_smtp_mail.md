@@ -118,12 +118,13 @@ $('#consult').on('click', function(e) {
   
   // ajax 통신
   $.ajax({
-    type : "post",
+    type : "get",
     url : "/mail",
     data : result,
     success : function(res) {
       if (res == 1) {
         alert('무료 컨설팅 요청이 완료되었습니다.');
+        reload();
       }
     },
     error : function(XMLHttpRequest, textStatus, errorThrown) {
@@ -131,4 +132,8 @@ $('#consult').on('click', function(e) {
     }
   });
 });
+        
+function reload() {
+  location.reload();
+}  
 ```
