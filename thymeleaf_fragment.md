@@ -33,9 +33,7 @@ insert는 현재 태그를 유지하면서 템플릿 조각을 가져오는 방�
 
 ```html
 <div th:insert="~{fragment/{folder name} :: copy}"></div>
-```
 
-```html
 <div>
   <div>
     insert
@@ -52,9 +50,7 @@ replace는 말 그대로 '대체'하는 방법이다. 현재 태그를 템플릿
 
 ```html
 <div th:replace="~{fragment/{folder name}} :: copy}"></div>
-```
 
-```html
 <div>
   replace
 </div>
@@ -69,9 +65,7 @@ replace는 말 그대로 '대체'하는 방법이다. 현재 태그를 템플릿
 
 ```html
 <div th:replace="~{fragment/{folder name} :: copyParam ('데이터1', '데이터2')}"></div>
-```
 
-```html
 <div>
   <p>파라미터 자리 입니다.</p>
   <p>데이터1</p>
