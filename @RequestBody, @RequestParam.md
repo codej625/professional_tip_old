@@ -295,9 +295,7 @@ public class UserController {
 
 <br/>
 
-```
 ||@RequestBody|@RequestParam|
 |------|---|---|
 |객체생성|가능|불가능|
 |각 변수별로 데이터 저장|불가능|가능|
-```
