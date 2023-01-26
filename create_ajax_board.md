@@ -605,13 +605,13 @@ function exportExcel() {
       return '자산관리대장(장비).xlsx'; // file name
     },
     getSheetName: () => {
-      return '장비';  // sheet name
+      return '장비'; // sheet name
     },
     getExcelData: () => {
-      return document.getElementById('tableData');  // table id
+      return document.getElementById('tableData'); // table id
     },
     getWorksheet: () => {
-      return XLSX.utils.table_to_sheet(this.getExcelData());
+      return XLSX.utils.table_to_sheet(excelHandler.getExcelData());
     }
   };
   
