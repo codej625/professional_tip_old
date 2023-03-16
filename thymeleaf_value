@@ -1,0 +1,9 @@
+# 타임리프를 사용하면서 value를 바로 적용해보자!
+
+```java
+mv.addObject("mainIndex", 1004);
+```
+
+```html
+<input type="hidden" name="" th:value="${mainIndex}">
+```
