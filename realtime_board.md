@@ -52,10 +52,10 @@
         </div>
       </div>
       <div class="table-responsive">
-        <table id="tb-1" class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered">
           <thead>
             <tr>
-              <th style="width: 80px;">
+              <th>
                 <input 
                   class="text-center rounded" 
                   value="no"
@@ -80,7 +80,7 @@
               </th>
               <th class="device" style="width: 80px;">
                 <select class="rounded text-center" onchange="ajaxReload();">
-                  <option>device</option>
+                  <option class="text-center">device</option>
                 </select>
               </th>
               <th class="source-code">
@@ -101,7 +101,7 @@
               <th>
                 <input 
                   class="text-center rounded" 
-                  value="광고"
+                  value="광고대상1"
                 >
               </th>
               <th class="contents-code">
@@ -133,6 +133,25 @@
                 >
               </th>
             </tr>
+          </thead>
+        </table>
+        <table id="tb-1" class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>no</th>
+              <th>req_date</th>
+              <th>time</th>
+              <th>ip</th>
+              <th>device</th>
+              <th>source_code</th>
+              <th>term_code</th>
+              <th>adv_object_name</th>
+              <th>광고대상1</th>
+              <th>contents_code</th>
+              <th>conversion_type</th>
+              <th>duplicate_flag</th>
+              <th>insu_price</th>
+              <th>mktagreyn</tr>
           </thead>
           <tbody id="tbl"></tbody>
         </table>
