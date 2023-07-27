@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <div th:fragment="frag_body" class="col-md-12">
+    <!-- Page Heading -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"></li>
+        <li class="breadcrumb-item"></li>
+        <li class="breadcrumb-item active" aria-current="page"></li>
+      </ol>
+    </nav>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <div class="div-button">
+          <div>
+            <form id="date">
+              <input id="dateStart" class="form-control ml-1" name="dateStart" type="date" value=""
+                onchange="ajaxReload();">
+              <input id="dateEnd" class="form-control ml-1" name="dateEnd" type="date" value=""
+                onchange="ajaxReload();">
+            </form>
+          </div>
+          <div>
+            <button id="company-ip" class="btn btn-outline-secondary mx-1" type="button">
+              테스트 아이피 체크
+            </button>
+            <button id="deduplication" class="btn btn-outline-secondary" type="button">
+              중복 제거
+            </button>
+            <button id="excel-down" class="btn btn-outline-secondary mx-1" type="button">
+              엑셀 다운로드
+            </button>
+            <button id="refresh" class="btn btn-outline-secondary" type="button">
+              새로 고침
+            </button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered filter-board">
+            <thead>
+              <tr>
+                <th style="width: 20px !important;" ondblclick="removeIp();">
+                  <img alt="filter" src="/img/filter.png">
+                </th>
+                <th>
+                  <input class="text-center rounded" value="no">
+                </th>
+                <th>
+                  <input class="text-center rounded" value="req_date">
+                </th>
+                <th>
+                  <input class="text-center rounded" value="time">
+                </th>
+                <th class="ip">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">ip</option>
+                  </select>
+                </th>
+                <th class="device" style="width: 80px;">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option>device</option>
+                  </select>
+                </th>
+                <th class="source-code">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">source_code</option>
+                  </select>
+                </th>
+                <th class="term-code">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">term_code</option>
+                  </select>
+                </th>
+                <th class="adv-object-name">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">adv_object_name</option>
+                  </select>
+                </th>
+                <th>
+                  <input class="text-center rounded" value="광고대상1">
+                </th>
+                <th class="contents-code">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">contents_code</option>
+                  </select>
+                </th>
+                <th class="conversion-type">
+                  <select class="rounded text-center" onchange="ajaxReload();">
+                    <option class="text-center">conversion_type</option>
+                  </select>
+                </th>
+                <th>
+                  <input class="text-center rounded" value="duplicate_flag">
+                </th>
+                <th>
+                  <input class="text-center rounded" value="insu_price">
+                </th>
+                <th>
+                  <input class="text-center rounded" value="mktagreyn">
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <table id="tb-1" class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>no</th>
+                <th>req_date</th>
+                <th>time</th>
+                <th>ip</th>
+                <th>device</th>
+                <th>source_code</th>
+                <th>term_code</th>
+                <th>adv_object_name</th>
+                <th>광고대상1</th>
+                <th>contents_code</th>
+                <th>conversion_type</th>
+                <th>duplicate_flag</th>
+                <th>insu_price</th>
+                <th>mktagreyn</th>
+            </thead>
+            <tbody id="tbl"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
