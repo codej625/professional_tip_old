@@ -33,3 +33,7 @@ git branch -M { branch_name }
 git remote add { new_remote_name or origin } { git hub url }
 
 git remote remove {  remote_name }
+
+git checkout -b {'branch name'} HEAD@{number}
+
+git reflog
