@@ -1,8 +1,10 @@
 # git difftool을 vscode로 사용해보자!
 
-<br />
+<br /><br />
 
 1. Command line 에서 code --help 가 동작하는지 확인.
+
+<br />
 
 2. 동작하지 않을 시 
 ```
@@ -11,8 +13,10 @@ VSC를 실행시키고 ⇧⌘P를 누른 후 Shell Command: Install ‘code’ c
 ```
 ```
 윈도우 기준
-“Add to PATH”를 선택
+“Add to PATH”를 선택 or PowerShell을 열고 ~/.gitconfig 입력
 ```
+
+<br />
 
 3. Command line 에서 다음을 입력
 ```
@@ -22,6 +26,8 @@ git config --global core.editor "code --wait"
 이제 다음과 같이 입력하면 VSC에서 Git config를 사용할 수 있다.
 git config --global -e
 ```
+
+<br />
 
 4. Git configuration
 ```
