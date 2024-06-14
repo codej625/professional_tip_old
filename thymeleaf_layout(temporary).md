@@ -1,8 +1,8 @@
-# thymeleaf template engine을 사용하여 layout을 구성해보자.
-<br>
-```html
-ex)
+# Thymeleaf(Template engine)을 사용하여 Layout을 구성해보자
 
+<br /><br />
+
+```html
 <html>
   <header>
   <nav>
@@ -10,13 +10,19 @@ ex)
   <footer>
 </html>
 ```
-<br>
+<br />
 
-1. layout을 왜 사용할까?
+* Layout을 왜 사용할까?
+---
+
 ```
-header와 footer가 고정적으로 들어가는 웹에서 각각의 page 마다 header, footer를 복사해서 넣어주는 것은 효율적이지 않기 때문에, 반복되는 HTML 코드를 줄이기 위해서 layout을 사용하게 된다.
+header와 footer가 고정적으로 들어가는
+웹에서 각각의 page마다 header, footer를 복사해서 넣어주는 것은 효율적이지 않기 때문에,
+반복되는 HTML 코드를 줄이기 위해서 Layout을 사용하게 된다.
 ```
-<br><br><br>
+
+
+<br /><br /><br />
 
 2. 프로젝트 구조와 적용 원리
 ```
