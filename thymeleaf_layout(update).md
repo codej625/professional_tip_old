@@ -56,6 +56,26 @@ dependencies {
 }
 ```
 
+<br />
+
+3. application.yaml 설정
+```yaml
+# Spring
+spring:
+  application:
+    name: web
+
+  # View
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html;charset=UTF-8
+```
+
 <br /><br /><br />
 
 * 타임리프 레이아웃 구현
