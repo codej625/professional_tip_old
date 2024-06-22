@@ -5,45 +5,27 @@
 1. DTO(Data Transfer Object)
 
 ```
-계층(Layer) 간 데이터 교환을 위해 사용하는 객체이다.
-데이터 교환만을 위해 사용하므로 로직을 갖지 않고, getter/setter 메소드만 가진다.
-
-일반적으로 Controller layer에서 Service layer까지 데이터를 전달하는 데 쓰인다.
+DTO는 데이터 전송 객체로,
+주로 데이터를 전달하기 위해 사용 된다.
+DTO는 일반적으로 데이터를 보유하기 위한 필드들과 이를 접근하기 위한 getter/setter 메서드들을 가진다.
+주로 서비스 계층(service layer)과 웹 계층(controller layer) 간 데이터 교환에 사용된다.
 (상세 분류 시 Request / Response 으로 분류가 가능하다.)
-```
-
-<br />
-
-```java
-class Dto {
-   private int red; // Field
-   private int green;
-   private int blue;
-  
-   public RGBColor(int red, int green, int blue) { // Constructor
-      this.red = red;
-      this.green = green;
-      this.blue = blue;
-   }
-  
-   public int getRed() { // Getter
-      return red;
-   }
-  
-   public int setRed(int red) { // Setter
-      this.red = red;
-   }
-
-   ...
-
-}
-
-로직은 없고, 데이터를 담고, 꺼내는 getter/setter 메소드만 담는다.
 ```
 
 <br /><br /><br />
 
-2. VO(Value Object)
+2. DAO (Data Access Object)
+
+```
+데이터베이스와의 상호작용을 추상화하고 데이터베이스에 접근하는 데 사용된다.
+DAO는 주로 CRUD(Create, Read, Update, Delete) 연산을 수행하는 메서드들을 포함한다.
+스프링부트에서는 DAO는 주로 Repository 인터페이스로 정의되며,
+Spring Data JPA 또는 JDBC 등의 기술을 사용하여 구현된다.
+```
+
+<br /><br /><br />
+
+3. VO(Value Object)
 
 ```
 값 그 자체를 표현하는 객체이다.
@@ -73,22 +55,18 @@ Value Object는 주로 값 자체가 중요한 경우에 사용.
 객체가 고유하게 식별되지 않고 값만으로 비교되는 경우가 많다.
 ```
 
-<br />
+<br /><br /><br />
 
-```java
-class RGBColor {
-   private final int red;
-   private final int green;
-   private final int blue;
+4. Entity
 
-  
-   @Override
-   public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      RGBColor rgbColor = (RGBColor) o;
-      return red == rgbColor.red && green == rgbColor.green && blue == rgbColor.blue;
-   }
-}
-// equals() 오버라이드 코드는 IDE에서 자동완성해준다.
+```
+Entity는 데이터베이스에서 엔티티(테이블)를 나타내는 객체이다.
+주로 데이터베이스의 테이블과 매핑되며,
+테이블의 각 열을 객체의 필드로 매핑한다.
+
+스프링부트에서 Entity는 주로 JPA(Java Persistence API)를 사용하여 정의되고,
+@Entity 어노테이션을 클래스 위에 붙여서 JPA에게 이 클래스가 엔티티임을 알린다.
+
+Entity 클래스는 데이터베이스 테이블의 구조를 정의,
+JPA를 통해 데이터베이스와 상호작용할 때 사용된다.
 ```
