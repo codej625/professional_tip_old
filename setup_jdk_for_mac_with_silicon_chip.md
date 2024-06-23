@@ -65,7 +65,8 @@ cd /Library/Java/JavaVirtualMachines
 ```
 // 이제 ls와 cd를 통해 밑에와 같이 Home의 경로를 찾으면 된다.
 
-/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home (JDK 11)
+/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home (JDK 17)
 ```
 
 <br /><br />
