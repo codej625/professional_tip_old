@@ -1,6 +1,6 @@
 # 실리콘 칩셋이 탑재 된 맥의 jdk(+환경변수)를 셋팅해 보자!
 
-<br />
+<br /><br />
 
 1. zsh를 설치하기 위해 brew를 설치한다.(zsh는 자바가 설치되어 있지 않으면 설치되지 않는데, 자바를 쉽게 설치하려면 zsh가 필요하다.)
 
@@ -46,7 +46,9 @@ https://docs.azul.com/core/uninstall/macos
 
 ```
 terminal에 "java --version"을 실행하면 자바 버전이 출력된다.
+
 하지만 echo $JAVA_HOME를 실행하면 환경변수가 나오지 않는다.
+
 즉, 환경변수를 설정해 줘야 한다.
 ```
 
