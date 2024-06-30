@@ -1,6 +1,23 @@
-# @SuppressWarnings("unchecked") 어노테이션에 대해 알아보자!
+# @SuppressWarnings() 어노테이션
+
+<br /><br />
+
+
+* @SuppressWarnings()
 
 ```
-@SuppressWarnings("unchecked") // Compile Error Unchecked
+Java에서 제네릭스(generics)를 사용할 때,
+컴파일러는 타입 안전성을 보장하기 위해 경고를 발생할 수 있다.
+예를 들어, 제네릭 타입을 사용하여 컬렉션을 다루는 경우,
+컴파일러는 원시 타입(raw type)을 사용하는 경우에 "unchecked" 경고를 일으킬 수 있다.
+이 경우, 코드의 타입 안정성은 보장되지 않을 수 있으므로 컴파일러는 경고를 통해 개발자에게 알려준다.
+
+그러나 경우에 따라 이러한 경고가 필요 없거나,
+제거할 수 없는 상황이 발생할 수 있다.
+이때 @SuppressWarnings("unchecked") 애노테이션을 사용하여 컴파일러가 발생시키는 해당 경고를 무시하도록 지시할 수 있다.
+이는 개발자가 명시적으로 해당 경고를 인지하고 있는 상태에서 사용해야 하며,
+타입 안전성이 보장될 때에만 사용하는 것이 좋다.
 ```
-위에 어노테이션은 제너럴 타입 혹은 object로 객체를 받아 형 변환시 에러가 생길 수 있는 상황에서 에러체크를 끄는 어노테이션이다.
+```java
+@SuppressWarnings("unchecked")
+```
