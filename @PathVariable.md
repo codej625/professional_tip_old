@@ -17,6 +17,8 @@ URL 경로에서 변수 값을 추출하여 메서드 파라미터로 전달할 
 ---
 
 ```
+* 기본 사용법
+
 예제에서 /users/{userId}는 URL 경로 패턴을 나타내며,
 {userId} 부분은 실제로 사용자 ID 값으로 치환될 변수이다.
 
@@ -32,6 +34,8 @@ public ResponseEntity<User> getUserById(@PathVariable Long userId) {}
 <br /><br />
 
 ```
+* 필수 제외 
+
 @PathVariable은 기본적으로 필수적인 값이라고 가정한다.
 즉, URL 경로에 {userId}와 같은 변수가 반드시 존재해야 하는데
 경우에 따라 선택적으로 값을 받을 수 있다.
@@ -46,4 +50,23 @@ public ResponseEntity<User> getUserById(@PathVariable(required = false) Long use
 여기서 required = false로 설정하면,
 userId가 URL 경로에 없는 경우 null로 처리된다.
 (기본값은 true)
+```
+
+<br /><br />
+
+```
+* 변수 매칭
+
+@PathVariable 매칭
+PathVariable과 다른 변수명을 사용하려면 예시 -> @PathVariable("id") 이런식으로 url의 Path variable 이름을 맞춰주고,
+
+메서드에서 사용할 변수명을 다르게 설정할 수 있다.
+```
+
+```java
+@GetMapping ("/order/{id}")
+public ResponseEntity<User> getUserById(@PathVariable("id") String user){
+  log.info("id : {}", user);
+  // ...   
+}
 ```
